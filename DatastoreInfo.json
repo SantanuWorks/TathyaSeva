@@ -1,0 +1,21 @@
+{
+    "DefaultUseDS": "OPENSTORE_SYSTEM_DIR_RESTRICTED",
+    "ListDatastore": [
+    ],
+    "OPENSTORE_SYSTEM_DIR_RESTRICTED": {
+        "BargraphList": [
+        ],
+        "CountBargraphs": 0,
+        "CountLinegraphs": 0,
+        "CountPiecharts": 0,
+        "CountStructures": 0,
+        "CountTables": 0,
+        "DOC": "Thu Jun 2 2022 13:06:43",
+        "LinegraphList": [
+        ],
+        "PiechartList": [
+        ],
+        "TableList": [
+        ]
+    }
+}

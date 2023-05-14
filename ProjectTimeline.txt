@@ -1,0 +1,98 @@
+`/*
+*
+* Problems:
+* ID 19 => Date: 18-04-22: Implement Keyword Suggester
+* ID 20 => Date: 20-04-22: Define Language i.e. Keywords Literals, operators etc
+* ID 21 => Date: 20-04-22: Define Data Type And Their Posible Computation
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+* Remaining Problems:
+* ID 19* => Date: 18-04-22: Implement Keyword Suggester
+* ID 20 => Date: 20-04-22: Define Language i.e. Keywords Literals, operators etc
+* ID 21 => Date: 20-04-22: Define Data Type And Their Posible Computation
+*
+*
+*
+*
+*
+*
+*
+*
+*
+* Solved:
+* ID 19* => Date: 18-04-22: At its early stage - work on it latter
+*
+*
+*
+*
+*
+*
+*
+*
+*
+***********************************  RE-FURNISHMENT AND NEW CHALLENGES - 17 APRIL 2022  ***********************************************
+*
+* Problems:
+* ID 10 => Date: 17-01-22: Get the entered text from the prompt
+* ID 11 => Date: 17-01-22: define a query class to manage query
+* ID 12 => Date: 17-01-22: define promptDecide() then define a logic to choose whether to print line number or the print
+* ID 13 => Date: 17-01-22: Little glitch in code for restricted area - unble to use shift + key to select text
+* ID 14 => Date: 17-01-22: multiple line code take and make one line - when nothing is entered at all then switch from line prompt to normal prompt and gather the code
+* ID 15 => Date: 17-01-22: put something so that prompt will remember previous codes
+* ID 16 => Date: 17-01-22: glitch found in enter event - when entered text cursor at prompt position then enter key if doesn't move the cursor only inserts prompt
+* ID 17 => Date: 16-04-22: glitch while printing the code history - previous code is not erasing completely
+* ID 18 => Date: 17-04-22: Up key is moving up at prompt position
+*
+* Remaining Problems:
+*
+* Solved:
+* ID 10 => Date: 17-01-22: By tracking the start and end position for entered query
+* ID 11 => Date: 17-01-22: defined the QueryClass
+* ID 12 => Date: 17-01-22: implemented by defining a promptDecide method which extracts the query and decides which prompt to be used
+* ID 13 => Date: 17-01-22: glitch solved by limiting it to only enter key
+* ID 16 => Date: 21-01-22: Solved by moving the text cursor to the end of the document
+* ID 15 => Date: 15-04-22: implemented Code History Vector
+* ID 18 => Date: 17-04-22: Navigation keys are turned off
+* ID 17 => Date: 16-04-22: To erase previous text, I moved the cursor before erasing to keep end position; then removed from QueryStartPosition to End position
+*
+***********************************  RECONSTRUCTION - 10 JAN 2022  ***********************************************
+*
+*
+* Problems:
+* ID 1 => Date: 23-12-21: Define Invalid and Partially invalid positions; set key restrictions on then
+* ID 2 => Date: 23-12-21: Restrict mouse handling cut paste on restriction positons
+* ID 3 => Date: 23-12-21: Handle key combinations i.e.Cut (Ctrl+X), Paste (Ctrl+V)
+* ID 4 => Date: 23-12-21: disable Redo and Undo
+* ID 5 => Date: 23-12-21: When copy multiple lines, it shatters the prompt
+* ID 6 => Date: 23-12-21: When copy is not working
+* ID 7 => Date: 24-12-21: when window size is small and text ammount is more - huge text shatters the prompt
+* ID 8 => Date: 26-12-21: after selecting text upto prompt insert position or next to and it then clicking text
+:                         key deletes all the selected text i.e. also the prompt
+* ID 9 => Date: 26-12-21: Add line number for multipleline texts
+* ID 3*( repeated ) => Date: 09-01-22: Handle key combinations i.e.Cut (Ctrl+X), Paste (Ctrl+V)
+*
+* Remaining Problems:
+* ID 7* => Date: 24-12-21: when window size is small and text ammount is more - huge text shatters the prompt
+* ID 9* => Date: 26-12-21: Add line number for multipleline texts
+*
+*
+* Solved:
+* ID 1 => Date: 23-12-21; Solved by defining positions and restricting keys
+* ID 2 => Date: 23-12-21: Solved via disbling the context menu : setContextMenu(Qt::NoContextMenu)
+* ID 4 => Date: 23-12-21: Solved using key->matches(QKeySequence::Redo/Undo)
+* ID 3 => Date: 23-12-21: Solved by making cut as copy operation; QClipboard is used to copy text to clipboard when text is selected and Cut
+* ID 6 => Date: 24-12-21: Solved uisng neglecting this event; universally return false
+* ID 5 => Date: 24-12-21: Solved by replacing newlines into space
+* ID 8 => Date: 26-12-21: Solved by considering anchor() and position() of selected text
+* ID 3 => Date: 13-01-22: solved after reimplementing everything
+*
+*
+**/

@@ -1,0 +1,24 @@
+{
+    "covid": {
+        "Attrs": [
+            "Year_2000",
+            "Year_2010",
+            "Year_2020"
+        ],
+        "CountAttrs": 3,
+        "DOC": "Mon Jun 13 2022 01:59:01",
+        "Datastore": "OPENSTORE_SYSTEM_DIR_RESTRICTED",
+        "Link": ""
+    },
+    "education": {
+        "Attrs": [
+            "year_2000",
+            "year_2005",
+            "year_2010"
+        ],
+        "CountAttrs": 3,
+        "DOC": "Tue Jun 14 2022 20:26:32",
+        "Datastore": "OPENSTORE_SYSTEM_DIR_RESTRICTED",
+        "Link": ""
+    }
+}

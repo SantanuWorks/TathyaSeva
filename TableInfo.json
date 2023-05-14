@@ -1,0 +1,63 @@
+{
+    "F1": {
+        "Columns": {
+            "Data": "string",
+            "Frequency": "int"
+        },
+        "CountCols": 2,
+        "CountRows": 3,
+        "DOC": "Wed Jun 15 2022 16:39:44",
+        "Datastore": "OPENSTORE_SYSTEM_DIR_RESTRICTED"
+    },
+    "F2": {
+        "Columns": {
+            "Data": "string",
+            "Frequency": "int"
+        },
+        "CountCols": 2,
+        "CountRows": 3,
+        "DOC": "Wed Jun 15 2022 16:39:44",
+        "Datastore": "OPENSTORE_SYSTEM_DIR_RESTRICTED"
+    },
+    "F3": {
+        "Columns": {
+            "Data": "string",
+            "Frequency": "int"
+        },
+        "CountCols": 2,
+        "CountRows": 3,
+        "DOC": "Wed Jun 15 2022 16:39:44",
+        "Datastore": "OPENSTORE_SYSTEM_DIR_RESTRICTED"
+    },
+    "Freq": {
+        "Columns": {
+            "Data": "string",
+            "Frequency": "int"
+        },
+        "CountCols": 2,
+        "CountRows": 4,
+        "DOC": "Wed Jun 15 2022 16:39:44",
+        "Datastore": "OPENSTORE_SYSTEM_DIR_RESTRICTED"
+    },
+    "Freq1": {
+        "Columns": {
+            "Data": "string",
+            "Frequency": "int"
+        },
+        "CountCols": 2,
+        "CountRows": 3,
+        "DOC": "Wed Jun 15 2022 16:39:44",
+        "Datastore": "OPENSTORE_SYSTEM_DIR_RESTRICTED"
+    },
+    "Test": {
+        "Columns": {
+            "A": "int",
+            "B": "float",
+            "C": "string"
+        },
+        "CountCols": 3,
+        "CountRows": 4,
+        "DOC": "Wed Jun 15 2022 16:39:44",
+        "Datastore": "OPENSTORE_SYSTEM_DIR_RESTRICTED"
+    }
+}

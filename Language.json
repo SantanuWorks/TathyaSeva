@@ -1,0 +1,60 @@
+{
+    "English": {
+        "AppName": "TathyaSeva - Command Line Interface",
+        "Datatypes": "int float bool scinot string",
+        "Digits": "1,2,3,4,5,6,7,8,9,0",
+        "Floating": "(^([+]?\\d+)[.](\\d+)$|^([-]\\d+)[.](\\d+)$)",
+        "Identifier": "^[\\w\\d_]+$",
+        "Integer": "(^[+]?\\d+$|^[-]\\d+$)",
+        "Keywords": "create table lang datastore order cal as sum count avg min max mean mode median frequency sd varience list delete clear count default asc env screen history exit dsc force rename to use insert display where update change add piechart from percent link remove bargraph linegraph with",
+        "Langs": "English Odia Hindi",
+        "NegativeFloat": "^([-]\\d+)[.](\\d+)$",
+        "NegativeInt": "^[-]\\d+$",
+        "PositiveFloat": "^([+]?\\d+)[.](\\d+)$",
+        "PositiveInt": "^[+]?\\d+$",
+        "SciNotation": "([-+]?\\d+.?\\d+[eE][-+]?\\d+)"
+    },
+    "EnvLang": {
+        "ColorBG": "white",
+        "DoubleQuoteStrRegx": "\"^[\"].*\"",
+        "KeywordCodes": "CREATE TABLE LANG DATASTORE ORDER CAL AS SUM COUNT AVG MIN MAX MEAN MODE MEDIAN FREQUENCY SD VARIENCE LIST DELETE CLEAR COUNT DEFAULT ASC ENV SCREEN HISTORY EXIT DSC FORCE RENAME TO USE INSERT DISPLAY WHERE UPDATE CHANGE ADD PIECHART FROM PERCENT LINK REMOVE BARGRAPH LINEGRAPH WITH",
+        "Langs": "English Odia Hindi",
+        "Operators": "* / ^ ( ) ; , { } % : = ~",
+        "SingleQuoteStrRegx": "'.*'",
+        "SpaceRegx": "\\s",
+        "StringRegx": "(^\".*\"$)|(^'.*'$)",
+        "StringRegx1": "^\".*\"$",
+        "TextColor": "black",
+        "lang": "English"
+    },
+    "Hindi": {
+        "AppName": "तोन्",
+        "Datatypes": "hint hfloat hbool hscinot hstring",
+        "Digits": "१,२,३,४,५,६,७,८,९,०",
+        "Floating": "(^([+]?[१२३४५६७८९०]+)[.]([१२३४५६७८९०]+)$|^([-][१२३४५६७८९०]+)[.]([१२३४५६७८९०]+)$)",
+        "Identifier": "^[\\w\\d_]+$",
+        "Integer": "(^[+]?[१२३४५६७८९०]+$|^[-][१२३४५६७८९०]+$)",
+        "Keywords": "hcreate htable hlang",
+        "Langs": "hEnglish hOdia hHindi",
+        "NegativeFloat": "^([-][१२३४५६७८९०]+)[.]([१२३४५६७८९०]+)$",
+        "NegativeInt": "^[-][१२३४५६७८९०]+$",
+        "PositiveFloat": "^([+]?[१२३४५६७८९०]+)[.]([१२३४५६७८९०]+)$",
+        "PositiveInt": "^[+]?[१२३४५६७८९०]+$",
+        "SciNotation": "^[-+]?([१२३४५६७८९०]+.?[१२३४५६७८९०]+)[eE]([-+]?[१२३४५६७८९०]+)$"
+    },
+    "Odia": {
+        "AppName": "ତଥ୍ୟସେବା - କମାଣ୍ଡ ଲାଇନ ଇନ୍ଟରଫେସ",
+        "Datatypes": "ପୂର୍ଣସଂଖ୍ୟା ଦଶମିକ ବୂଲିୟାନ ବୈଜ୍ଞାନିକ ବାକ୍ୟ",
+        "Digits": "୧,୨,୩,୪,୫,୬,୭,୮,୯,୦",
+        "Floating": "^([+]?[୧୨୩୪୫୬୭୮୯୦]+)[.]([୧୨୩୪୫୬୭୮୯୦]+)$|^([-][୧୨୩୪୫୬୭୮୯୦]+)[.]([୧୨୩୪୫୬୭୮୯୦]+)$",
+        "Identifier": "^[\\w\\d_]+$",
+        "Integer": "(^[+]?[୧୨୩୪୫୬୭୮୯୦]+$|^[-][୧୨୩୪୫୬୭୮୯୦]+$)",
+        "Keywords": "ତିଆରିକର ସାରଣୀ ଭାଷା",
+        "Langs": "ଇଂରାଜୀ ଓଡିଆ ହିନ୍ଦୀ",
+        "NegativeFloat": "^([-][୧୨୩୪୫୬୭୮୯୦]+)[.]([୧୨୩୪୫୬୭୮୯୦]+)$",
+        "NegativeInt": "^[-][୧୨୩୪୫୬୭୮୯୦]+$",
+        "PositiveFloat": "^([+]?[୧୨୩୪୫୬୭୮୯୦]+)[.]([୧୨୩୪୫୬୭୮୯୦]+)$",
+        "PositiveInt": "^[+]?[୧୨୩୪୫୬୭୮୯୦]+$",
+        "SciNotation": "^[-+]?([୧୨୩୪୫୬୭୮୯୦]+.?[୧୨୩୪୫୬୭୮୯୦]+)[eE]([-+]?[୧୨୩୪୫୬୭୮୯୦]+)$"
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "XY_Linegraph": {
+        "Attrs": [
+            "34",
+            "2",
+            "40",
+            "20",
+            "64"
+        ],
+        "CountAttrs": 5,
+        "DOC": "Mon Jun 13 2022 02:15:54",
+        "Datastore": "OPENSTORE_SYSTEM_DIR_RESTRICTED",
+        "Link": "XY"
+    },
+    "line_grph": {
+        "Attrs": [
+            "34",
+            "2",
+            "40",
+            "20",
+            "64"
+        ],
+        "CountAttrs": 5,
+        "DOC": "Mon Jun 13 2022 18:01:11",
+        "Datastore": "OPENSTORE_SYSTEM_DIR_RESTRICTED",
+        "Link": "XY"
+    },
+    "lineg": {
+        "Attrs": [
+        ],
+        "CountAttrs": 0,
+        "DOC": "Mon Jun 13 2022 16:45:41",
+        "Datastore": "OPENSTORE_SYSTEM_DIR_RESTRICTED",
+        "Link": ""
+    },
+    "yes": {
+        "Attrs": [
+            "8",
+            "55",
+            "55"
+        ],
+        "CountAttrs": 3,
+        "DOC": "Mon Jun 13 2022 16:58:24",
+        "Datastore": "OPENSTORE_SYSTEM_DIR_RESTRICTED",
+        "Link": ""
+    }
+}

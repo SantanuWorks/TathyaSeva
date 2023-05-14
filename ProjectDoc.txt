@@ -1,0 +1,372 @@
+"TableCalCommonStates" : "TABLE CAL NAME",
+"TableCalSumStates" : "TABLE CAL NAME SUM ( COL ,  ) ;",
+"TableCalCountStates" : "TABLE CAL NAME COUNT ( COL ,  ) ;",
+"TableCalAvgStates" : "TABLE CAL NAME AVG ( COL ,  ) ;",
+"TableCalMinStates" : "TABLE CAL NAME MIN ( COL ,  ) ;",
+"TableCalMaxStates" : "TABLE CAL NAME MAX ( COL ,  ) ;",
+"TableCalMeanStates" : "TABLE CAL NAME MEAN ( COL ,  ) ;",
+"TableCalModeStates" : "TABLE CAL NAME MODE ( COL ,  ) ;",
+"TableCalMedianStates" : "TABLE CAL NAME MEDIAN ( COL ,  ) ;",
+"TableCalFrequencyStates" : "TABLE CAL NAME FREQUENCY ( COL ,  ) ;",
+"TableCalSDStates" : "TABLE CAL NAME SD ( COL , ) ;",
+"TableCalVarienceStates" : "TABLE CAL NAME VARIENCE ( COL , ) ;",
+
+"EnvMeanStates" : "ENV MEAN ( NUMERIC , ) ;",
+"EnvModeStates" : "ENV MODE ( NUMERIC , ) ;",
+"EnvMedianStates" : "ENV MEDIAN ( NUMERIC , ) ;",
+"EnvSumStates" : "ENV SUM ( NUMERIC , ) ;",
+"EnvMinStates" : "ENV MIN ( NUMERIC , ) ;",
+"EnvMaxStates" : "ENV MAX ( NUMERIC , ) ;",
+"EnvAvgStates" : "ENV AVG ( NUMERIC , ) ;",
+"EnvSDStates" : "ENV SD ( NUMERIC , ) ;",
+"EnvVarienceStates" : "ENV VARIENCE ( NUMERIC , ) ;",
+
+"EnvFrequencyCommonStates" : "ENV FREQUENCY ( DATA , ) ;",
+"EnvFrequencyStates" : "ENV FREQUENCY ( DATA , ) ;",
+"EnvFrequencyTableStates" : "ENV FREQUENCY ( DATA , ) AS TABLE NAME ;",
+"EnvFrequencyTablesStates" : "ENV FREQUENCY ( COL , ) AS TABLE ( NAME , ) ;",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*************   FEATURES ADDED   ***************
+
+-- Regarding prompt area
+
+--- Before the current prompt
+
+--- Override redo and undo universally/
+--- Universally allow Copy/
+
+---- Don't Override
+   - up, down, left, right/
+   - copy
+   - shit + Up or Down or Left or Right/
+---- Do Override
+   - undo, redo, enter, paste
+
+--- At the current prompt
+--- After the current prompt
+
+
+
+
+//void Automata::CreateCmd(int State, StrList Tokens, int index){
+//    // "CREATE", "TABLE", "NAME", "{", "COL", ":", "DATATYPE",",", "}", ";"
+//    if( CreateCmdStates[State] == ";" && Tokens[index] == ";" ) qWarning() << "Good";
+//    else{
+//        if( Tokens[index] == CreateCmdStates[State] ){
+//            if( CreateCmdStates[State] == "," ){
+//                CreateCmd(4,Tokens,index+1);
+//            }else{
+//                if( index == Tokens.size() - 1 ) qWarning() << ER.ErrorCode_ErrorValue["MISSING_SEMICOLON"];
+//                else CreateCmd(State+1,Tokens,index+1);
+//            }
+//        }
+//        else if( CreateCmdStates[State] == "NAME"  ){
+//            if( TokenKey_KeyList["IDENTIFIERS"].contains(Tokens[index], Qt::CaseInsensitive) ){
+//                CreateCmd(State+1,Tokens,index+1);
+//            }else{
+//                qWarning() << ER.ErrorCode_ErrorValue["INVALID_TABLE_NAME"];
+//            }
+//        }else if( CreateCmdStates[State] == "COL"  ){
+//            if( TokenKey_KeyList["IDENTIFIERS"].contains(Tokens[index], Qt::CaseInsensitive) ){
+//                if( Tokens[index+1] == ":" ){
+//                    if( TokenKey_KeyList["DATATYPES"].contains( Tokens[index+2], Qt::CaseInsensitive ) ){
+//                        if( Tokens[index+3] == "}" ) CreateCmd(8,Tokens,index+3);
+//                        else CreateCmd(7,Tokens,index+3);
+//                    }else{
+//                        qWarning() << ER.ErrorCode_ErrorValue["EXPECTING_DATATYPE"];
+//                    }
+//                }
+//                else if( Tokens[index+1] == "}" ){
+//                    CreateCmd(8,Tokens,index+1);
+//                }
+//                else{
+//                    CreateCmd(7,Tokens,index+1);
+//                }
+//            }else{
+//                qWarning() << ER.ErrorCode_ErrorValue["INVALID_COL_NAME"];
+//            }
+//        }else if( CreateCmdStates[State] == "}" ){
+//            CreateCmd(State+1,Tokens,index+1);
+//        }else{
+//            qWarning() << "Invalid " + Tokens[index];
+//        }
+//    }
+//}
+
+
+
+//    StrList DatastoreListStates = { "DATASTORE" , "LIST" , ";" } ;
+//    StrList DatastoreCreateStates = { "DATASTORE" , "CREATE" , "NAME" , ";" } ;
+//    StrList DatastoreDeleteStates = { "DATASTORE" , "DELETE" , "NAME" , ";" } ;
+//    StrList DatastoreClearCommonStates = { "DATASTORE" , "CLEAR" , "NAME" } ;
+//    StrList DatastoreClearTableStates = { "DATASTORE" , "CLEAR" , "NAME" , ";" } ;
+//    StrList DatastoreClearTablesStates = { "DATASTORE" , "CLEAR" , "NAME" , "(" , "TABLENAME" , "," , ")" , ";" } ;
+//    StrList DatastoreRenameStates = { "DATASTORE" , "RENAME" , "NAME" , "TO" , "NEWNAME" , ";" } ;
+//    StrList DatastoreUseStates = { "DATASTORE" , "USE" , "NAME" , ";" } ;
+//    StrList DatastoreDisplayCommonStates = { "DATASTORE" , "DISPLAY" , "NAME" , "*" } ;
+//    StrList DatastoreDisplayAllStates = { "DATASTORE" , "DISPLAY" , "NAME" , "*" , ";" } ;
+//    StrList DatastoreDisplayTablesStates = { "DATASTORE" , "DISPLAY" , "NAME" , "*" , "TABLE" , ";" } ;
+//    StrList DatastoreDisplayPiechartsStates = { "DATASTORE" , "DISPLAY" , "NAME" , "*" , "PIECHART" , ";" } ;
+//    StrList DatastoreDisplayBargraphsStates = { "DATASTORE" , "DISPLAY" , "NAME" , "*" , "BARGRAPH" , ";" } ;
+//    StrList DatastoreDisplayLinegraphsStates = { "DATASTORE" , "DISPLAY" , "NAME" , "*" , "LINEGRAPH" , ";" } ;
+
+//    StrList TableCreateStates = { "TABLE" , "CREATE" , "NAME" , "{" , "COL" , ":" , "DATATYPE" , "," , "}" , ";" };
+//    StrList TableInsertStates = { "TABLE" , "INSERT" , "NAME" , "{" , "COL" , "=" , "DATA" , "," , "}" , ";" };
+//    StrList TableChangeStates = { "TABLE" , "CHANGE" , "NAME" , "{" , "COL" , ":" , "DATATYPE" , "," , "}" , ";" };
+//    StrList TableRenameStates = { "TABLE" , "RENAME" , "NAME" , "TO" , "NEWNAME" , ";" };
+//    StrList TableRenameColStates = { "TABLE" , "RENAME" , "NAME" , "{" , "COL" , ":" , "NEWCOL" , "," , "}" , ";" };
+//    StrList TableRenameCommonStates = { "TABLE" , "RENAME" , "NAME" } ;
+//    StrList TableAddStates = { "TABLE" , "ADD" , "NAME" , "{" , "COL" , ":" , "DATATYPE" , "," , "}" , ";" };
+//    StrList TableClearCommonStates = { "TABLE" , "CLEAR" , "NAME" } ;
+//    StrList TableClearTableStates = { "TABLE" , "CLEAR" , "NAME" , ";" };
+//    StrList TableClearColStates = { "TABLE" , "CLEAR" , "NAME" , "(" , "COL" , "," , ")" , ";" };
+//    StrList TableDisplayCommonStates = { "TABLE" , "DISPLAY" , "NAME" };
+//    StrList TableDisplayAllStates = { "TABLE" , "DISPLAY" , "NAME" , ";" };
+//    StrList TableDisplayAscCommonStates = { "TABLE" , "DISPLAY" , "NAME" , "ASC" };
+//    StrList TableDisplayAllAscStates = { "TABLE" , "DISPLAY" , "NAME" , "ASC" , ";" };
+//    StrList TableDisplayColsAscStates = { "TABLE" , "DISPLAY" , "NAME" , "ASC" , "(" , "COL" , "," , ")" , ";"  };
+//    StrList TableDisplayDscCommonStates = { "TABLE" , "DISPLAY" , "NAME" , "DSC" };
+//    StrList TableDisplayAllDscStates = { "TABLE" , "DISPLAY" , "NAME" , "DSC" , ";" };
+//    StrList TableDisplayColsDscStates = { "TABLE" , "DISPLAY" , "NAME" , "DSC" , "(" , "COL" , "," , ")" , ";"  };
+//    StrList TableDisplayColsStates = { "TABLE" , "DISPLAY" , "NAME" , "(" , "COL" , "," , ")" , ";"  };
+//    StrList TableDisplayStructureStates = { "TABLE" , "DISPLAY" , "NAME" , "~" , ";" };
+//    StrList TableUpdateStates = { "TABLE" , "UPDATE" , "NAME" , "{" , "COL" , "=" , "DATA" , "," , "}" , ";"  };
+//    StrList TableDeleteCommonStates = { "TABLE" , "DELETE" , "NAME" };
+//    StrList TableDeleteStates = { "TABLE" , "DELETE" , "NAME" , ";" };
+//    StrList TableDeleteColStates = { "TABLE" , "DELETE" , "NAME" , "(" , "COL" , "," , ")" , ";" };
+
+
+//    // PieChart Commmads
+//    // Create Piechart from binary table - contains two col one is string another is numeric
+//    StrList PieFromTableStates = { "PIECHART" , "CREATE" , "NAME" , "FROM" , "TABLENAME" , ";" };
+//    StrList PieCreateStates = { "PIECHART" , "CREATE" , "NAME" , "{" , "DATANAME" , "=" , "NUMERIC" , "," , "}" , ";" };
+//    StrList PieCreateCommonStates = { "PIECHART" , "CREATE" , "NAME" } ;
+//    StrList PieDisplayStates = { "PIECHART" , "DISPLAY" , "NAME" , ";" };
+//    StrList PieDisplayPercentStates = { "PIECHART" , "DISPLAY" , "PERCENT" , "NAME" , ";" };
+//    StrList PieDisplayCommonStates = { "PIECHART" , "DISPLAY" } ;
+//    StrList PieDeleteStates = { "PIECHART" , "DELETE" , "NAME" ,  ";" };
+//    StrList PieRenameStates = { "PIECHART" , "RENAME" , "NAME" , "TO" , "NEWNAME" , ";" };
+//    // Link Table to Piechart - when table updated piechart automatically updates
+//    StrList PieLinkTableStates = { "PIECHART" , "LINK" , "PIENAME" , "WITH" , "TABLENAME" , ";" };
+//    StrList PieRemoveLinkTableStates = { "PIECHART" , "LINK" , "REMOVE" , "PIENAME" , ";" };
+//    StrList PieLinkCommonStates = { "PIECHART" , "LINK" } ;
+
+
+//    // BarGraph Commmads
+//    // Create Bargraph from binary table - contains two col one is string another is numeric
+//    StrList BarFromTableStates = { "BARGRAPH" , "CREATE" , "NAME" , "FROM" , "TABLENAME" , ";" };
+//    StrList BarCreateStates = { "BARGRAPH" , "CREATE" , "NAME" , "{" , "X" , "=" , "Y" , "," , "}" , ";" };
+//    StrList BarCreateCommonStates = { "BARGRAPH" , "CREATE" , "NAME" } ;
+//    StrList BarDisplayStates = { "BARGRAPH" , "DISPLAY" , "NAME" , ";" };
+//    StrList BarDeleteStates = { "BARGRAPH" , "DELETE" , "NAME" ,  ";" };
+//    StrList BarRenameStates = { "BARGRAPH" , "RENAME" , "NAME" , "TO" , "NEWNAME" , ";" };
+//    // Link Table to Bargraph - when table updated piechart automatically updates
+//    StrList BarLinkTableStates = { "BARGRAPH" , "LINK" , "BARNAME" , "WITH" , "TABLENAME" , ";" };
+//    StrList BarRemoveLinkTableStates = { "BARGRAPH" , "LINK" , "REMOVE" , "BARNAME" , ";" };
+//    StrList BarLinkCommonStates = { "BARGRAPH" , "LINK" } ;
+
+
+
+//    // LineGraph Commmads
+//    // Create Linechart from binary table - contains two col one is string another is numeric
+//    StrList LineFromTableStates = { "LINEGRAPH" , "CREATE" , "NAME" , "FROM" , "TABLENAME" , ";" };
+//    StrList LineCreateStates = { "LINEGRAPH" , "CREATE" , "NAME" , "{" , "X" , "=" , "Y" , "," , "}" , ";" };
+//    StrList LineCreateCommonStates = { "LINEGRAPH" , "CREATE" , "NAME" } ;
+//    StrList LineDisplayStates = { "LINEGRAPH" , "DISPLAY" , "NAME" , ";" };
+//    StrList LineDeleteStates = { "LINEGRAPH" , "DELETE" , "NAME" ,  ";" };
+//    StrList LineRenameStates = { "LINEGRAPH" , "RENAME" , "NAME" , "TO" , "NEWNAME" , ";" };
+//    // Link Table to Linechart - when table updated piechart automatically updates
+//    StrList LineLinkTableStates = { "LINEGRAPH" , "LINK" , "LINENAME" , "WITH" , "TABLENAME" , ";" };
+//    StrList LineRemoveLinkTableStates = { "LINEGRAPH" , "LINK" , "REMOVE" , "LINENAME" , ";" };
+//    StrList LineLinkCommonStates = { "LINEGRAPH" , "LINK" } ;
+
+//    StrList ChangeLangCmdStates = { "LANG", "=", "LANGNAME", ";" };
+
+//    int doubleQuoteCount = 0, singleQuoteCount = 0, i = 0 ,ID=0;;
+//    int strIndexStart, strIndexEnd ;
+//    bool detect = false;
+//    QString DetectedStr,Key;
+//    MapStrStr StrKey_StrValue;
+//    for( auto ch : Str ){
+//        if( !singleQuoteCount ){
+//            if( ch == '"' && doubleQuoteCount == 0 ){
+//                doubleQuoteCount = 1;
+//                strIndexStart = i ;
+//            }else if(ch == '"' && Str[i-1] == '\\'){
+//                Str.remove(i-1,1);
+//                continue;
+//            }
+//            else if( ch == '"' && doubleQuoteCount != 0 ){
+//                doubleQuoteCount = 0;
+//                strIndexEnd = i;
+//                detect = true;
+//            }
+//        }
+//        if( !doubleQuoteCount ){
+//            if( ch == '\'' && singleQuoteCount == 0 ){
+//                singleQuoteCount = 1;
+//                strIndexStart = i ;
+//            }else if(ch == '\'' && Str[i-1] == '\\'){
+//                Str.remove(i-1,1);
+//                continue;
+//            }
+//            else if( ch == '\'' && singleQuoteCount != 0 ){
+//                singleQuoteCount = 0;
+//                strIndexEnd = i;
+//                detect = true;
+//            }
+//        }
+//        if( detect ){
+//            DetectedStr =  Str.sliced(strIndexStart, strIndexEnd - strIndexStart + 1 );
+//            Key = " STR"+QString::number(ID)+" " ;
+//            CommonName_Value.insert(Key.trimmed(),DetectedStr);
+//            Str.replace(strIndexStart, strIndexEnd - strIndexStart + 1,Key);
+//            LANG.STR_TOKENS << Key.trimmed();
+//            TokenKey_KeyList["DATA"] << Key.trimmed();
+//            ID ++;
+//            detect = false;
+//        }
+//        i ++ ;
+//    }
+
+//class English{
+//public:
+//    StrList eDigits;
+
+//    // Data Members
+//    regx eInteger, ePositiveInt, eNegativeInt;
+//    regx eFloating, ePositiveFloat, eNegativeFloat ;
+//    regx eSciNotation;
+//    regx eIdentifier;
+//    StrList eKeywords;
+//    StrList eDatatypes;
+//    StrList eLangs;
+
+//    // Member Functions
+//    English();
+//    bool isEngNumeric(int LangID );
+//};
+//English::English(){
+//    ePositiveInt.setPattern("^[+]?\\d+$");
+//    eNegativeInt.setPattern("^[-]\\d+$");
+//    eInteger.setPattern("(^[+]?\\d+$|^[-]\\d+$)");
+//    ePositiveFloat.setPattern("^([+]?\\d+)[.](\\d+)$");
+//    eNegativeFloat.setPattern("^([-]\\d+)[.](\\d+)$");
+//    eFloating.setPattern("(^([+]?\\d+)[.](\\d+)$|^([-]\\d+)[.](\\d+)$)");
+//    eSciNotation.setPattern("([-+]?\\d+.?\\d+[eE][-+]?\\d+)");
+//    eIdentifier.setPattern("^[\\w\\d_]+$");
+//    eDigits = QString("1,2,3,4,5,6,7,8,9,0").split(",");
+//    eKeywords = {"create","table","lang"} ;
+//    eDatatypes = { "int", "float", "bool", "scinot", "string" } ;
+//    eLangs = { "English","Odia","Hindi" } ;
+//}
+//bool English::isEngNumeric(int LangID){
+//    if( LangID == ENG ) return true;
+//    return false;
+//}
+//class Odia{
+//public:
+//    StrList oDigits;
+
+//    // Data Members
+//    regx oInteger, oPositiveInt, oNegativeInt;
+//    regx oFloating, oPositiveFloat, oNegativeFloat ;
+//    regx oSciNotation;
+//    regx oIdentifier;
+//    StrList oKeywords;
+//    StrList oDatatypes;
+//    StrList oLangs;
+//    // Member Functions
+//    Odia();
+//    bool isOdiaNumeric(int LangID );
+//};
+//Odia::Odia(){
+//    oPositiveInt.setPattern("^[+]?[୧୨୩୪୫୬୭୮୯୦]+$");
+//    oNegativeInt.setPattern("^[-][୧୨୩୪୫୬୭୮୯୦]+$");
+//    oInteger.setPattern("(^[+]?[୧୨୩୪୫୬୭୮୯୦]+$|^[-][୧୨୩୪୫୬୭୮୯୦]+$)");
+//    oPositiveFloat.setPattern("^([+]?[୧୨୩୪୫୬୭୮୯୦]+)[.]([୧୨୩୪୫୬୭୮୯୦]+)$");
+//    oNegativeFloat.setPattern("^([-][୧୨୩୪୫୬୭୮୯୦]+)[.]([୧୨୩୪୫୬୭୮୯୦]+)$");
+//    oFloating.setPattern("(^([+]?[୧୨୩୪୫୬୭୮୯୦]+)[.]([୧୨୩୪୫୬୭୮୯୦]+)$|^([-][୧୨୩୪୫୬୭୮୯୦]+)[.]([୧୨୩୪୫୬୭୮୯୦]+)$)");
+//    oSciNotation.setPattern("^[-+]?([୧୨୩୪୫୬୭୮୯୦]+.?[୧୨୩୪୫୬୭୮୯୦]+)[eE]([-+]?[୧୨୩୪୫୬୭୮୯୦]+)$");
+//    oIdentifier.setPattern("^[\\w\\d_]+$");
+//    oDigits = QString("୧,୨,୩,୪,୫,୬,୭,୮,୯,୦").split(",");
+//    oKeywords = {"ତିଆରିକର","ସାରଣୀ", "ଭାଷା"} ;
+//    oDatatypes = { "ପୂର୍ଣସଂଖ୍ୟା", "ଦଶମିକ", "ବୂଲିୟାନ", "ବୈଜ୍ଞାନିକ", "ବାକ୍ୟ" } ;
+//    oLangs = { "ଇଂରାଜୀ","ଓଡିଆ","ହିନ୍ଦୀ" } ;
+//}
+//bool Odia::isOdiaNumeric(int LangID){
+//    if( LangID == ODIA ) return true;
+//    return false;
+//}
+//class Hindi{
+//public:
+//    StrList hDigits;
+
+//    // Data Members
+//    regx hInteger, hPositiveInt, hNegativeInt;
+//    regx hFloating, hPositiveFloat, hNegativeFloat ;
+//    regx hSciNotation;
+//    regx hIdentifier;
+//    StrList hKeywords;
+//    StrList hDatatypes;
+//    StrList hLangs;
+
+//    // Member Functions १२३४५६७८९०
+//    Hindi();
+//    bool isHindiNumeric(int LangID) ;
+//};
+//Hindi::Hindi(){
+//    hPositiveInt.setPattern("^[+]?[१२३४५६७८९०]+$");
+//    hNegativeInt.setPattern("^[-][१२३४५६७८९०]+$");
+//    hInteger.setPattern("(^[+]?[१२३४५६७८९०]+$|^[-][१२३४५६७८९०]+$)");
+//    hPositiveFloat.setPattern("^([+]?[१२३४५६७८९०]+)[.]([१२३४५६७८९०]+)$");
+//    hNegativeFloat.setPattern("^([-][१२३४५६७८९०]+)[.]([१२३४५६७८९०]+)$");
+//    hFloating.setPattern("(^([+]?[१२३४५६७८९०]+)[.]([१२३४५६७८९०]+)$|^([-][१२३४५६७८९०]+)[.]([१२३४५६७८९०]+)$)");
+//    hSciNotation.setPattern("^[-+]?([१२३४५६७८९०]+.?[१२३४५६७८९०]+)[eE]([-+]?[१२३४५६७८९०]+)$");
+//    hIdentifier.setPattern("^[\\w\\d_]+$");
+//    hDigits = QString("१,२,३,४,५,६,७,८,९,०").split(",");
+//    hKeywords = {"hcreate","htable","hlang"} ;
+//    hDatatypes = { "int", "float", "bool", "scinot", "string" } ;
+//    hLangs = { "hEnglish","hOdia","hHindi" } ;
+//}
+//bool Hindi::isHindiNumeric(int LangID){
+//    if( LangID == HINDI ) return true;
+//    return false;
+//}
+*************   PROBLEMS   ***************

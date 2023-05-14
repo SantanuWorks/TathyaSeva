@@ -1,0 +1,25 @@
+{
+    "empolyee": {
+        "Attrs": [
+            "food",
+            "education",
+            "rent"
+        ],
+        "CountAttrs": 3,
+        "DOC": "Tue Jun 14 2022 20:26:32",
+        "Datastore": "OPENSTORE_SYSTEM_DIR_RESTRICTED",
+        "Link": ""
+    },
+    "student": {
+        "Attrs": [
+            "sleep",
+            "study",
+            "entertainment",
+            "Food"
+        ],
+        "CountAttrs": 4,
+        "DOC": "Mon Jun 13 2022 01:30:23",
+        "Datastore": "OPENSTORE_SYSTEM_DIR_RESTRICTED",
+        "Link": ""
+    }
+}
