@@ -1,4 +1,4 @@
-`/*
+/*
 *
 * Problems:
 * ID 19 => Date: 18-04-22: Implement Keyword Suggester
